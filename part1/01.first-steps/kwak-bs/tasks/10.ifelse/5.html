@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ifelse</title>
+    <style>
+      h1{
+        color:seagreen;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>ifelse 과제5</h1>
+
+    <script>
+      'use strict';
+      let login = '직원';
+      let message ;
+
+      // if (login == '직원') {
+      //   message = '안녕하세요.';
+      // } else if (login == '임원') {
+      //   message = '환영합니다.';
+      // } else if (login == '') {
+      //   message = '로그인이 필요합니다.';
+      // } else {
+      //   message = '';
+      // }
+
+      message = (login == '직원') ? '안녕하세요' 
+        : (login == '임원') ? '환영합니다.'
+        : (login == '') ? '로그인이 필요합니다.'
+        : '';
+
+      alert(message);
+    </script>
+  </body>
+</html>
