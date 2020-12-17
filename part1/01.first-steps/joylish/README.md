@@ -4,8 +4,6 @@
 1. `null` vs `undefined` vs `NaN` primitive 타입
 2. Value & Reference
 3. `statement` vs `expression`
-4. `call stack`
-5. 
 
 ## 🧐면접관처럼 질문할 목록
 - 없음
@@ -93,31 +91,3 @@
   - `expression`
     : 
 
-6. 🦄 Callstack
-
-    자바스크립트에서는 함수를 실행할 때 Stack에 저장하여 실행한다.
-
-```javascript
-  function third() {
-    console.log("Three is called!");
-  }
-
-  function second() {
-  third();
-  }
-
-  function first() {
-  second();
-  }
-
-  function zero() {
-  first();
-  }
-
-  zero();
-```
-
-- 함수 호출 순서
-> zero → first → second → third
-- 함수 실행 순서
-> third ("Three is called!" 출력) → second → first → zero
