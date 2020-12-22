@@ -85,3 +85,91 @@ for (let code in codes) {
   alert( +code ); // 49, 41, 44, 1
 }
 ```
+
+## 2. 참조에 의한 객체 복사
+<br/>
+
+객체가 할당된 변수를 복사하면 동일한 객체에 대한 참조 값이 하나 더 만들어진다.
+
+<img src="./images/reference-cope.png" width="400px;">
+<br/>
+
+```javascript
+let user = { name: 'John' };
+
+let admin = user;
+
+admin.name = 'Pete';
+
+console.log(user.name);
+// Pete
+console.log(admin.name);
+// Pete
+```
+
+<br/>
+
+
+### 💫 참조에 의한 비교
+
+```javascript
+let ball1 = {
+  color: "blue",
+}
+
+let ball2 = ball1
+
+let ball3 = = {
+  color: "blue",
+}
+
+console.log(ball1 == ball2)
+// true
+console.log(ball1 == ball3)
+// false
+```
+
+💥 객체끼리 비교(>, <, ==) 또는 원시값과 객체 비교할 경우 객체가 원시형으로 변환된다.
+
+<br/>
+
+
+### 💫 그럼 어떻게 객체를 복사할 수 있을까?
+<br/>
+
+1. 반복문으로 기존 객체 프로퍼티들을 순회
+2. Object.assign 함수
+
+    동일한 이름을 가진 프로퍼티가 있는 경우엔 기존 값 덮어짐
+
+```javascript
+let ball = {
+  color: "blue",
+};
+let props1 = {
+  size: "small",
+};
+let props2 = {
+  name: "soccer",
+};
+let props3 = {
+  color: "white",
+};
+
+Object.assign(ball, props1, props2);
+console.log(ball)
+// { color: "white", size: "small", name: "soccer"}
+```
+
+3. _.cloneDeep(obj)를 통해서 중첩객체 복사 
+
+<br/>
+
+## 3. 가비지 컬렉션
+
+도달 가능성을 통해서 메모리가 관리된다.
+
+## 4. this
+|구분|함수|화살표함수|
+|---|---|---|
+this|함수 내 변수, 객체 접근 가능|화살표 함수가 아닌 외부 함수/컨텍스트에 접근 가능 
