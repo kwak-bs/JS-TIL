@@ -7,12 +7,12 @@
 // 프롬프트 대화상자를 띄워 사용자로부터 x와 n을 입력받고 pow(x,n)의 반환 값을 보여주는 코드를 작성해 보세요.
 
 function pow(x, n) {
-  let temp = 1;
+  let sum = 1;
 
   for (let i = 1; i <= n; i++) {
-    temp = temp * x;
+    sum = sum * x;
   }
-  return temp;
+  return sum;
 }
 
 let x = prompt("x?", "");
